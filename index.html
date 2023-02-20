@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git cheatsheet</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <header>Git cheatsheet</header>
+        <p><a href="#Introduction" class="nav-link">Introduction</a></p>
+        <p><a href="#Setting_up_a_new_repository" class="nav-link">Setting up a new repository</a></p>
+        <p><a href="#Committing_changes" class="nav-link">Committing changes</a></p>
+        <p><a href="#Working_with_branches" class="nav-link">Working with branches</a></p>
+        <p><a href="#Using_a_remote_repository" class="nav-link">Using a remote repository</a></p>
+        <p><a href="#Additional_useful_commands" class="nav-link">Additional useful commands</a></p>
+    </nav>
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            <header>Introduction</header>
+            <p>Git is a powerful version control system that can be overwhelming for beginners. A Git cheat sheet is a
+                valuable tool to quickly access the most commonly used Git commands and options. This cheat sheet covers
+                essential Git commands to help you become more productive in your development workflow.</p>
+        </section>
+        <section class="main-section" id="Setting_up_a_new_repository">
+            <header>Setting up a new repository</header>
+            <p>The easiest way to set up a new repository is to run <code>git init</code> in the directory where you
+                want your
+                project files to be. The <code>git init</code> command is especially useful when you already have an
+                existing
+                project that is not in a git repository yet.
+            </p>
+
+            <p>
+                Another way to set up your git repository, is making a new repository on GitHub. GitHub will provide you
+                with a repository URL that you can use to clone the repository to your computer. You can do this by
+                simply
+                running <code>git clone your-repository-url</code> in the directory where you want your repository to
+                live.
+            </p>
+        </section>
+        <section class=" main-section" id="Committing_changes">
+            <header>Committing changes</header>
+            <p>After making some changes to your codebase, you can commit them to the repository. To do this, you will
+                first have to stage your changes. You can do this with <code>git add path/to/file</code>. Here, you
+                can replace <code>path/to/file</code> with the file path to your changed files. You can also use
+                <code>git add .</code> to add all changed files in your current working directory.
+            </p>
+            <p>
+                If there is anything staged that you do not want to commit just yet, you can use
+                <code>git reset HEAD -- path/to/file</code> to remove a file from the staging area.
+            </p>
+            <p>
+                When you are happy with the staged files, you can use <code>git commit -m "Your description here"</code>
+                with a short description of your changes to commit them to your repository.
+            </p>
+        </section>
+        <section class="main-section" id="Working_with_branches">
+            <header>Working with branches</header>
+            <p>
+                The possibility of using branches is one of the most powerful features of git. You can use branches to
+                work on a part of the code while others are working on other parts of the same codebase. By working on
+                different branches, your changes will not affect your colleagues until the code is merged to a main or
+                master branch.
+            </p>
+            <p>
+                You can make a new branch with <code>git branch branch-name</code>. After doing this, you can move to
+                the new branch using <code>git checkout branch-name</code>. To see a list of all available branches in
+                your local repository, simply use <code>git branch</code>.
+            </p>
+            <p>
+                When you want to merge the changes of your branch to another branch, you first have to go to the branch
+                you want to merge your changes to with <code>git checkout branch-name</code>. After doing this, you can
+                merge the changes of your branch with <code>git merge branch-name</code>.
+            </p>
+        </section>
+        <section class="main-section" id="Using_a_remote_repository">
+            <header>Using a remote repository</header>
+            <p>
+                Remote repositories are another powerful feature of git. Using remote repositories, you can synchronize
+                your repository with one on a git server, for example GitHub.
+            </p>
+            <p>
+                If you used <code>git clone</code> to initialize your repository, you already have your remote branch
+                set up. Otherwise, you can connect your local repository to a remote one with
+                <code>git remote add origin your-repository-url</code>. This will add a remote repository with the name
+                <code>origin</code>, which is the standard name for a remote repository.
+            </p>
+            <p>
+                After connecting a remote repository, you can <i>pull</i> any changes from the remote repository using
+                <code>git pull</code>. Equally, you can <i>push</i> your own changes using <code>git push</code>.
+            </p>
+        </section>
+        <section class="main-section" id="Additional_useful_commands">
+            <header>Additional useful commands</header>
+            <p>
+            <ul>
+                <li>Show a log of commits: <code>git log</code></li>
+                <li>Show the current branch and changed files: <code>git status</code></li>
+                <li>Remove all changes since last commit: <code>git reset --hard</code></li>
+                <li>Restore to last commit, but save changes: <code>git stash</code></li>
+                <li>Restore changes that were saved with <code>git stash</code>: <code>git stash pop</code></li>
+            </ul>
+            </p>
+    </main>
+</body>
+
+</html>
